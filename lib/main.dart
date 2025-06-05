@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:instagram/screens/splash.dart';
 
+import 'package:flutter/material.dart';
+import 'package:instagram/screens/splash/splash.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

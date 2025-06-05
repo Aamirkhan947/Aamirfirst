@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -8,6 +9,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+int selectIndex = 0;
+
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,22 +21,22 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: Icon(Icons.menu, color: Colors.white, size: 30),
         title: Container(
           width: 100,
-          height: 60,
+          height: 100,
           decoration: BoxDecoration(color: Colors.blue),
-          child: Image.asset("assets/images/E (1).png"),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Icon(Icons.shopping_cart, color: Colors.white, size: 30),
+          child: Image.asset(
+            "assets/images/Esykart123456789.png",
+            color: Colors.white,
           ),
+        ),
+       /* actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
-              onTap: (){},
-                child: Icon(Icons.notifications, color: Colors.white, size: 30)),
+              onTap: () {},
+              child: Icon(Icons.notifications, color: Colors.white, size: 30),
+            ),
           ),
-        ],
+        ],*/
       ),
       body: Column(
         children: [
@@ -42,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: searchController,
                 decoration: InputDecoration(
                   filled: true,
                   hintText: 'Search your product..',
@@ -69,18 +75,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          SizedBox(
-            height: 5,
-          ),
+          SizedBox(height: 5),
           Container(
             height: 80,
             width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.white60
-            ),
+            decoration: BoxDecoration(color: Colors.white60),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child:  Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
@@ -94,12 +96,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.amber,
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.asset("assets/images/tshirt.png",width: 40,height: 40,),
+                              child: Image.asset(
+                                "assets/images/tshirt.png",
+                                width: 40,
+                                height: 40,
+                              ),
                             ),
-                            SizedBox(
-                              height: 5,
+                            SizedBox(height: 5),
+                            Text(
+                              "Men",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'regular',
+                              ),
                             ),
-                            Text("Men",style: TextStyle(fontSize: 18,fontFamily: 'regular'),)
                           ],
                         ),
                       ),
@@ -112,12 +122,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.amber,
                                 shape: BoxShape.circle,
                               ),
-                            child: Image.asset("assets/images/woman.png",width: 40,height: 40,),
+                              child: Image.asset(
+                                "assets/images/woman.png",
+                                width: 40,
+                                height: 40,
+                              ),
                             ),
-                            SizedBox(
-                              height: 5,
+                            SizedBox(height: 5),
+                            Text(
+                              "Women",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'regular',
+                              ),
                             ),
-                            Text("Women",style: TextStyle(fontSize: 18,fontFamily: 'regular'),)
                           ],
                         ),
                       ),
@@ -130,13 +148,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.amber,
                                 shape: BoxShape.circle,
                               ),
-                              /*child: Icon(Icons.access_alarm,color: Colors.blue,size: 45,),*/
-                              child: Image.asset("assets/images/people.png",width: 40,height: 40,),
+                              child: Image.asset(
+                                "assets/images/people.png",
+                                width: 40,
+                                height: 40,
+                              ),
                             ),
-                            SizedBox(
-                              height: 5,
+                            SizedBox(height: 5),
+                            Text(
+                              "Kids",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'regular',
+                              ),
                             ),
-                            Text("Kids",style: TextStyle(fontSize: 18,fontFamily: 'regular'),)
                           ],
                         ),
                       ),
@@ -149,12 +174,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.amber,
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.asset("assets/images/smartphone.png",width: 40,height: 40,),
+                              child: Image.asset(
+                                "assets/images/smartphone.png",
+                                width: 40,
+                                height: 40,
+                              ),
                             ),
-                            SizedBox(
-                              height: 5,
+                            SizedBox(height: 5),
+                            Text(
+                              "Mobiles",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'regular',
+                              ),
                             ),
-                            Text("Mobiles",style: TextStyle(fontSize: 18,fontFamily: 'regular'),)
                           ],
                         ),
                       ),
@@ -167,12 +200,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.amber,
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.asset("assets/images/furniture.png",width: 40,height: 40,),
+                              child: Image.asset(
+                                "assets/images/furniture.png",
+                                width: 40,
+                                height: 40,
+                              ),
                             ),
-                            SizedBox(
-                              height: 5,
+                            SizedBox(height: 5),
+                            Text(
+                              "Furniture",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'regular',
+                              ),
                             ),
-                            Text("Furniture",style: TextStyle(fontSize: 18,fontFamily: 'regular'),)
                           ],
                         ),
                       ),
@@ -185,12 +226,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.amber,
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.asset("assets/images/electrical-appliance.png",width: 40,height: 40,),
+                              child: Image.asset(
+                                "assets/images/electrical-appliance.png",
+                                width: 40,
+                                height: 40,
+                              ),
                             ),
-                            SizedBox(
-                              height: 5,
+                            SizedBox(height: 5),
+                            Text(
+                              "Electronics",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'regular',
+                              ),
                             ),
-                            Text("Electronics",style: TextStyle(fontSize: 18,fontFamily: 'regular'),)
                           ],
                         ),
                       ),
@@ -203,12 +252,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.amber,
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.asset("assets/images/basket (1).png",width: 40,height: 40,),
+                              child: Image.asset(
+                                "assets/images/basket (1).png",
+                                width: 40,
+                                height: 40,
+                              ),
                             ),
-                            SizedBox(
-                              height: 5,
+                            SizedBox(height: 5),
+                            Text(
+                              "Grocery",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'regular',
+                              ),
                             ),
-                            Text("Grocery",style: TextStyle(fontSize: 18,fontFamily: 'regular'),)
                           ],
                         ),
                       ),
@@ -219,55 +276,80 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
-
       ),
-      bottomNavigationBar: Container(
-        height: 70,
+      /// BottomNavigation Bar
+      bottomNavigationBar:Container(
+        height: 75,
         decoration: BoxDecoration(
           color: Colors.blue,
-         /* borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(16),
-            topRight: Radius.circular(16),
-
-          ),*/
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            IconButton(
-              onPressed: () {
-                setState(() {
-
-                });
-              },
-              icon: Icon(
-                Icons.home_outlined,
-                color: Colors.white,size: 32,),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                    });
+                  },
+                  icon: Icon(Icons.home_outlined, color: Colors.white, size: 32,),
+                ),
+                Text("Home",style: TextStyle(color: Colors.white,fontSize: 15),)
+              ],
             ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.person_outline,
-                color: Colors.white,size: 32,),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () {
+                  },
+                  icon: Icon(Icons.grid_view, color: Colors.white, size: 32),
+                ),
+                Text("Category",style: TextStyle(color: Colors.white,fontSize: 15),)
+              ],
             ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.notifications,
-                color: Colors.white,size: 32,),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.person, color: Colors.white, size: 32),
+                ),
+                Text("Account",style: TextStyle(color: Colors.white,fontSize: 15),)
+              ],
             ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.settings,
-                color: Colors.white,size: 32,),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.shopping_cart, color: Colors.white, size: 32),
+                ),
+                Text("Cart",style: TextStyle(color: Colors.white,fontSize: 15,),)
+              ],
             ),
-
           ],
         ),
-
       ),
-
     );
   }
+}
+
+Widget buildProjectContainer(String title, Color bgColor) {
+  return Container(
+    margin: const EdgeInsets.symmetric(vertical: 6),
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: bgColor,
+      borderRadius: BorderRadius.circular(12),
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+        ),
+        Icon(Icons.arrow_forward_ios, size: 18),
+      ],
+    ),
+  );
 }
