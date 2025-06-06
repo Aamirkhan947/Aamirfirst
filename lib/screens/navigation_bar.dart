@@ -1,6 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/address/address_screen.dart';
+import 'package:instagram/screens/all_category.dart';
 import 'package:instagram/screens/home_screen.dart';
+
+import 'account/account_page.dart';
 
 class homePage extends StatefulWidget {
   @override
@@ -10,32 +14,72 @@ class homePage extends StatefulWidget {
 class _homePageState extends State<homePage> {
   int _selectedIndex = 0;
 
-  void onItemTapped(int index) {
+  void onTap(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
-  List<Widget> navPages = [
-   HomeScreen()
+  List<Widget> allPages = [
+   HomeScreen(),
+    AllCategory(),
+    AccountScreens(),
+
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: navPages[_selectedIndex],
-     /* floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => AddExpensePage(),
-              ));
-        },
-        child: Icon(Icons.add),
-      ),*/
-      bottomNavigationBar: BottomAppBar(
+      body: allPages[_selectedIndex],
+      bottomNavigationBar:Container(
+        height: 75,
+        decoration: BoxDecoration(
+          color: Colors.blue,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () => onTap(0),
+                  icon: Icon(Icons.home_outlined, color: Colors.white, size: 32,),
+                ),
+                Text("Home",style: TextStyle(color: Colors.white,fontSize: 15),)
+              ],
+            ),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () => onTap(1),
+                  icon: Icon(Icons.grid_view, color: Colors.white, size: 32),
+                ),
+                Text("Category",style: TextStyle(color: Colors.white,fontSize: 15),),
+              ],
+            ),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () => onTap(2),
+                  icon: Icon(Icons.person, color: Colors.white, size: 32),
+                ),
+                Text("Account",style: TextStyle(color: Colors.white,fontSize: 15),)
+              ],
+            ),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () => onTap(3),
+                  icon: Icon(Icons.shopping_cart, color: Colors.white, size: 32),
+                ),
+                Text("Cart",style: TextStyle(color: Colors.white,fontSize: 15,),)
+              ],
+            ),
+          ],
+        ),
+      ),
+      /*bottomNavigationBar: BottomAppBar(
         elevation: 15,
         color: Colors.white,
         shadowColor: Colors.black,
@@ -99,7 +143,7 @@ class _homePageState extends State<homePage> {
             ),
           ],
         ),
-      ),
+      ),*/
     );
   }
 }

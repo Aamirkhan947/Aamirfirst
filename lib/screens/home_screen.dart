@@ -9,7 +9,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-int selectIndex = 0;
 
   TextEditingController searchController = TextEditingController();
 
@@ -277,58 +276,7 @@ int selectIndex = 0;
           ),
         ],
       ),
-      /// BottomNavigation Bar
-      bottomNavigationBar:Container(
-        height: 75,
-        decoration: BoxDecoration(
-          color: Colors.blue,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                    });
-                  },
-                  icon: Icon(Icons.home_outlined, color: Colors.white, size: 32,),
-                ),
-                Text("Home",style: TextStyle(color: Colors.white,fontSize: 15),)
-              ],
-            ),
-            Column(
-              children: [
-                IconButton(
-                  onPressed: () {
-                  },
-                  icon: Icon(Icons.grid_view, color: Colors.white, size: 32),
-                ),
-                Text("Category",style: TextStyle(color: Colors.white,fontSize: 15),)
-              ],
-            ),
-            Column(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.person, color: Colors.white, size: 32),
-                ),
-                Text("Account",style: TextStyle(color: Colors.white,fontSize: 15),)
-              ],
-            ),
-            Column(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.shopping_cart, color: Colors.white, size: 32),
-                ),
-                Text("Cart",style: TextStyle(color: Colors.white,fontSize: 15,),)
-              ],
-            ),
-          ],
-        ),
-      ),
+
     );
   }
 }

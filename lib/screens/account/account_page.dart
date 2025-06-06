@@ -34,7 +34,7 @@ class AccountScreens extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
+                      color: Colors.grey,
                       blurRadius: 8,
                       spreadRadius: 2,
                       offset: Offset(0, 3),
